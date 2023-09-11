@@ -297,7 +297,33 @@
   | -gt | Greater Than or Equal |
   | -ne | Not Equal |
 
-  Por ultimo podemos ver operadores de comparacion de ficheros
+  Por ultimo podemos ver operadores de comparacion de ficheros.
+
+  |Operador|Verdarero cuando|
+  |--------|----------------|
+  | -a fichero| El fichero existe |
+  | -b fichero| El fichero existe y es un dispositivo de bloque |
+  | -c fichero| El fichero existe y es un dispositivo de caracter |
+  | -d fichero| El fichero existe y es un directorio |
+  | -e fichero| Equivalente a:  -a fichero |
+  | -f fichero| El fichero existe y es un fichero regular |
+  | -g fichero| El fichero existe y tiene activo el bit setgid |
+  | -G fichero| El fichero existe y es poseído por el grupo ID efectivo |
+  | -h fichero| El fichero existe y es un enlace simbolico |
+  | -k fichero| El fichero existe y tiene activo el bit stricky |
+  | -L fichero| El fichero existe y es un enlace simbolico |
+  | -N fichero| El fichero existe y fue modificado desde la ultima lectura |
+  | -O fichero| El fichero existe y es poseído por el grupo ID efectivo |
+  | -p fichero| El fichero existe y es un pipe o named pipe |
+  | -r fichero| El fichero existe y podemos leerlo |
+  | -s fichero| El fichero existe y no esta vacio |
+  | -S fichero| El fichero existe y es un socket|
+  | -u fichero| El fichero existe y tiene activo el bit setuid |
+  | -w fichero| El fichero existe y tenemos permiso de escritura |
+  | -x fichero| El fichero existe y tenemos permiso de ejecucion o lectura si es un directorio |
+  | fich1 -nt fich2| La fecha de modificacion del fich1 es mas nueva que la de fich2 (Newer Than) |
+  | fich1 -ot fich2| La fecha de modificacion del fich1 es mas vieja que la de fich2 (Older Than) |
+  | fich1 -ef fich2| fich1 y fich2 son el mismo fichero (Equal File) |
 
 - #### Sentencias cíclicas.
 - #### Subprogramas.
