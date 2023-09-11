@@ -326,4 +326,42 @@
   | fich1 -ef fich2| fich1 y fich2 son el mismo fichero (Equal File) |
 
 - #### Sentencias cíclicas.
+  
+  +El bucle for es mas parecido al estilo de bucles for each de algunos lenguajes. Su sintaxis es
+
+  ~~~bash
+  for var [in lista]; do
+    #sentensias que usan $var
+  done
+  ~~~
+
+  *Bucle for*
+  
+  El bucle for no se repite una cantidad fija de veces sino que se procesan las palabras de una frase una a una.
+
+  El bucle puede contener comodines, por ejemplo
+
+  ~~~bash
+  #Script que muestra informacion detallada de todos los ficheros en el directorio actual
+  for fichero in *; do
+    ls -l "$fichero"
+  done
+  ~~~
+
+  *Bucle while y until*
+
+  La sintaxis de este bucle es como se presenta a continuacion.
+
+  ~~~bash
+  while comando; do
+    #Sentencias del bucle while
+  done
+
+  until comando; do
+    #Sentencias del bucle until
+  done
+  ~~~
+  La diferencia entre While y Until es que while se ejecuta mientras que el codigo de terminacion es exitoso y Until se ejecuta hasta que el codigo de terminacion es exitoso. Esto podemos intepretarlo como que while se ejecuta siempre que el comando tenga exito y until se ejecuta varias veces hasta que el comando tuvo exito.
+
+
 - #### Subprogramas.
