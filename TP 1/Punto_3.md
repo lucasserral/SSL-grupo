@@ -223,5 +223,81 @@
   Por ultimo las llaves tambien se utilizan para extender las variables posicionales. Si quisieramos tener la variable posicional $10, debemos entrecerrarlo entre llaves pues bash lo interpreta como la variable $1 seguido de un 0. Por lo tanto la forma correcta de definirlo seria ${10}
 
 - #### Sentencias condicionales.
+  
+  Las sentencias de control condicionales tienen el siguiente formato:
+
+  ~~~bash
+  if condicion
+  then
+  sentencias
+  elif condicion
+  then
+  sentencias
+  else
+  sentencias
+  fi
+
+  #Otra forma de visualizarlo
+
+  if condicion; then
+    sentencias
+  elif condicion; then
+    sentencias
+  else
+    sentencias
+  fi
+  ~~~
+
+  La sentencia if comprueba el codigo de terminacion de un comando en la condicion (En Unix los comandos terminan con un codigo numerico que indica si el comando tuvo exito o no). Si este es 0, la condicon se evalua como cierta.
+
+  El codigo de terminacion puede consultarse pues disponemos de la variable ?, y accedemos a su valor medianto $?. Esta variable debe ser leida luego de ejecutar algun comando.
+
+  Disponemos tambien de operadores logicos para ser utilizados dentro de la condicion de la sentencia if. estos son && (and) , || (or) y ! (not).
+
+  ~~~bash
+  #Ejemplo condicional con comandos y &&
+  if cd /tmp && cp 001.tmp $HOME; then
+    echo "la condicion de la sentencia fue satisfecha"
+  else
+    echo "La condicion de la sentencia no se ha satisfecho"
+  fi
+
+  #Ejemplo condicional con comandos y ||
+  if cp 001.tmp $HOME || cp 002.tmp $HOME; then
+    echo "La condicion de la sentencia fue satisfecha"
+  fi
+
+  #Ejemplo condicional con comando y !
+  if cp /tmp/001.tmp $HOME; then
+    echo "La condicion fallo con exito"
+  fi
+  ~~~
+
+  En el primer ejemplo si la primer condicion falla, deja de evaluar las siguientes pues no tiene sentido seguir evaluando. Similar pasa con el segundo ejemplo, si la primer condicion se satisface correctamente, deja de evaluar las siguientes condiciones pues no tiene sentido seguir evaluandolo. Por ultimo en el tercer ejemplo se ingresa a las sentencias cuando el comando falla y el codigo de terminacion se niega con el operador logico !, volviendolo verdadero.
+
+  Para comparar cadenas lo hacemos de manera lexicograficamente,  para ello contamos con los operadores:
+  
+  | Operador | verdadero cuando |
+  |----------|----------|
+  | str1 = str2 | Las cadenas son iguales   |
+  | srt1 != str2 | Las cadenas son distintas |
+  | str1 < str2 | str1 es menor lexicograficamente a str2 |
+  |str1 > str2 | str1 es mayor lexicograficamente a str2|
+  | -n str1 | str1 es no nula y tiene longitur mayor a cero|
+  | -z str1  |sgtr1 es nula|
+
+  Para comparar enteros tenemos otros operadores
+
+   | Operador | verdadero cuando |
+  |----------|----------|
+  | -lt | Less Than |
+  | -le | Less Than or Equal |
+  | -eq | EQual |
+  | -ge | Greater Than |
+  | -gt | Greater Than or Equal |
+  | -ne | Not Equal |
+
+  Por ultimo podemos ver operadores de comparacion de ficheros
+
 - #### Sentencias cíclicas.
 - #### Subprogramas.
