@@ -16,7 +16,7 @@ sed -r 's/\.[^\n]/\.\n/g;' paraprobar.txt | grep -c '[^(peronismo)]*peronismo.*\
 sed -r 's/\.[^\n]/\.\n/g;' paraprobar.txt | grep -cE '(Sarmiento).*(Rosas)|(Rosas).*(Sarmiento)'
 
 # punto h
-sed -r 's/\.[^\n]/\.\n/g;' paraprobar.txt | grep  '^. *18[0-9][0-9].*\.$'
+sed -r 's/\.[^\n]/\.\n/g;' paraprobar.txt | grep  '^.*18[0-9][0-9].*\.$'
 
 # punto i
 # Como veníamos trabajando sobre el archivo original "breve_historia.txt", entendemos que la sustitución se debe de realizar en este mismo archivo.
